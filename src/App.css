@@ -1,38 +1,62 @@
-.App {
-  text-align: center;
-}
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400&display=swap');
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
+:root {
+  --font-base: 'Verdana', sans-serif;
+  --font-alt: 'Raleway', sans-serif;
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  --color-ash-gray: #B4B8AB;
+  --color-prussian-blue: #153243;
+  --color-indigo-blue: #284B63;
+  --color-ivory: #F4F9E9;
+  --color-burnt-orange: #BA5624;
+}
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  scroll-behavior: smooth;
+}
+a {
+  color: unset;
+  text-decoration: none;
+}
+.p__raleway {
+  font-family: var(--font-alt);
+  color: var(--color-ivory);
+}
+.p__verdana {
+  font-family: var(--font-base);
+  color: var(--color-ivory);
+}
+.app__navbar {
+  width: 100%;
   display: flex;
-  flex-direction: column;
   align-items: center;
+  justify-content: space-between;
+  background-color: var(--color-prussian-blue);
+  padding: 1rem 2rem;
+}
+.app__navbar-logo {
+display: flex;
+justify-content: flex-start;
+align-items: center;
+}
+.app__navbar-logo img {
+  width: 85px;
+}
+.app__navbar-links {
+  flex: 1;
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
+  align-items: center;
 
-.App-link {
-  color: #61dafb;
+  list-style: none;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.app__navbar-links li {
+  margin: 0 1rem;
+cursor: pointer;
+}
+.app__navbar-links li:hover{
+ color: var(--color-ash-gray);
 }
