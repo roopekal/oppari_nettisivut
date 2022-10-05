@@ -1,0 +1,20 @@
+.app__events {
+   position: relative;
+}
+.app__events-content {
+   width: 100%;
+   z-index: 2;
+   align-items: flex-end;
+   justify-items: flex-end;
+   flex-direction: column;   
+}
+.app__events-content_permanent {
+   flex: 1;
+   display: flex;
+   justify-content: flex-end;
+   align-items: center;
+   flex-direction: column;
+}
+.app__events-content_permanent img {
+   align-self: flex-start;
+}

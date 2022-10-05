@@ -11,3 +11,16 @@
 .app__header-img img {
    width: 80%;
 }
+ 
+ 
+ @media screen and (max-width: 1150px) {
+   .app__header-h1 {
+      line-height: 100px;
+      font-size: 70px;
+   }}
+  @media screen and (max-width: 650px) {
+   .app__header-h1 {
+      line-height: 80px;
+      font-size: 55px;
+   }
+ }
