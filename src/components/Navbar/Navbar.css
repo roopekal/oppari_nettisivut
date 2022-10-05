@@ -6,6 +6,7 @@
   justify-content: space-between;
   background-color: var(--color-prussian-blue);
   padding: 1rem 2rem;
+  position: fixed;
 }
 .app__navbar-logo {
 display: flex;
