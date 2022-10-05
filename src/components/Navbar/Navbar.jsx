@@ -15,7 +15,7 @@ const Navbar = () => {
          </div>
          <ul className="app__navbar-links">
             <li className="p__raleway">
-               <a href="#aboutus">Kievari</a>
+               <a href="#home">Kievari</a>
             </li>
             <li className="p__raleway app__navbar-divider">
                <a href="#"></a>
