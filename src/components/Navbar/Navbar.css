@@ -11,6 +11,8 @@
 display: flex;
 justify-content: flex-start;
 align-items: center;
+cursor: pointer;
+
 }
 .app__navbar-logo img {
   width: 85px;

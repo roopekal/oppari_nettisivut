@@ -9,7 +9,7 @@
 }
 
 .app__bg {
-  /*background: url('./assets/bg.png');*/
+  background: url('./assets/bg1.png');
   background-position: center;
   background-size: cover;
   background-repeat: repeat;
@@ -51,11 +51,11 @@
 .app__wrapper_img img {
   width: 80%;
 }
-/*
+
 .custom__button {
-  background-color: var(--color-crimson);
+  background-color: var(--color-ash-gray);
     color: var(--color-black);
-    font-family: var(--font-base);
+    font-family: var(--font-alt);
     font-weight: 700;
     letter-spacing: 0.04em;
     line-height: 28px;
@@ -66,16 +66,15 @@
     outline: none;
     cursor: pointer;
 }
-*/
+
 .p__verdana {
-  font-family: var(--font-base);
+  font-family: var(--font-alt);
   color: var(--color-ivory);
-  font-weight: 700;
+  font-weight: 400;
   letter-spacing: 0.04em;
   text-transform: capitalize;
-  font-feature-settings: 'tnum' on, 'lnum' on;
-  line-height: 29.9px;
-  font-size: 23px;
+  line-height: 28px;
+  font-size: 16px;
 }
 
 .p__raleway {
@@ -87,20 +86,31 @@
   line-height: 28px;
   font-size: 16px;
 }
-/*
-.headtext__cormorant {
-  font-family: var(--font-base);
-  color: var(--color-golden);
+
+.p__poiret-one {
+  font-family: var(--font-fancy);
+  color: var(--color-ivory);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: capitalize;
+  font-feature-settings: 'tnum' on, 'lnum' on;
+  line-height: 29.9px;
+  font-size: 23px;
+}
+
+.headtext__poiret-one {
+  font-family: var(--font-fancy);
+  color: var(--color-ash-gray);
   font-size: 64px;
   line-height: 83.2px;
   letter-spacing: 0.04em;
   text-transform: capitalize;
 }
 
-.spoon__img {
-  width: 45px;
+.branch__img {
+  width: 70px;
 }
-
+/*
 @media screen and (min-width: 2000px) {
   .custom__button,
   .p__cormorant {

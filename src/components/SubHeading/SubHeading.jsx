@@ -1,13 +1,9 @@
 import React from "react";
-
+import images from "../../constants/images";
 const SubHeading = ({ title }) => (
    <div style={{ marginBottom: "1rem" }}>
-      <p className="p__raleway">{title}</p>
-      <img
-         src="laanilan_kievari_logo_no_bg.png"
-         alt="spoon_image"
-         className="spoon__img"
-      />
+      <p className="p__poiret-one">{title}</p>
+      <img src={images.branch} alt="placeholder" className="branch__img" />
    </div>
 );
 

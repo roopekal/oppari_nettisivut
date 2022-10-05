@@ -1,0 +1,13 @@
+.app__header {
+   background-color: var(--color-indigo-blue);
+}
+.app__header-h1 {
+   font-family: var(--font-fancy);
+   color: var(--color-ivory);
+   text-transform: uppercase;
+   line-height: 117px;
+   font-size: 80px;
+}
+.app__header-img img {
+   width: 80%;
+}
