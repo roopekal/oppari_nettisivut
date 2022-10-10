@@ -1,0 +1,20 @@
+.app__sauna-content {
+   display: flex;
+   flex-direction: column;
+   width: 100%;
+}
+.app__sauna-content_upper {
+   text-align: center;
+}
+.app__sauna-content_lower {
+   text-align: center;
+}
+.app__sauna-content_main-text {
+   margin: 2rem 0;
+}
+.app__sauna-content_minor-text {
+   font-size: 19px;
+   font-weight: bold;
+   color: var(--color-prussian-blue);
+}
+
