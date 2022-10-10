@@ -1,12 +1,11 @@
-.app__events {
-   position: relative;
-}
 .app__events-content {
    width: 100%;
-   z-index: 2;
    align-items: flex-end;
    justify-items: flex-end;
-   flex-direction: column;   
+   flex-direction: column;
+}
+.app__events-content h1 {
+text-align: center;
 }
 .app__events-content_permanent {
    flex: 1;
@@ -18,3 +17,19 @@
 .app__events-content_permanent img {
    align-self: flex-start;
 }
+.app__events-content_general {
+   flex: 1;
+   display: flex;
+   justify-content: flex-start;
+   align-items: center;
+   flex-direction: column;
+}
+.app__events-content_general img {
+   align-self: flex-start;
+}
+.app__events-content_general p{
+margin: 2rem 0;
+}
+.app__events-content_permanent p{
+   margin: 2rem 0;
+   }

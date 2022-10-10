@@ -84,27 +84,39 @@ const Navbar = () => {
                   />
                   <ul className="app__navbar-smallscreen_links">
                      <li className="p__raleway">
-                        <a href="#aboutus">Kievari</a>
+                        <a href="#home" onClick={() => setToggleMenu(false)}>
+                           Kievari
+                        </a>
                      </li>
 
                      <li className="p__raleway">
-                        <a href="#events">Tapahtumat</a>
+                        <a href="#events" onClick={() => setToggleMenu(false)}>
+                           Tapahtumat
+                        </a>
                      </li>
 
                      <li className="p__raleway">
-                        <a href="#menu">A la carte</a>
+                        <a href="#menu" onClick={() => setToggleMenu(false)}>
+                           A la carte
+                        </a>
                      </li>
 
                      <li className="p__raleway">
-                        <a href="#wines">Viinit</a>
+                        <a href="#wines" onClick={() => setToggleMenu(false)}>
+                           Viinit
+                        </a>
                      </li>
 
                      <li className="p__raleway">
-                        <a href="#sauna">Sauna</a>
+                        <a href="#sauna" onClick={() => setToggleMenu(false)}>
+                           Sauna
+                        </a>
                      </li>
 
                      <li className="p__raleway">
-                        <a href="#contact">Yhteystiedot</a>
+                        <a href="#contact" onClick={() => setToggleMenu(false)}>
+                           Yhteystiedot
+                        </a>
                      </li>
 
                      <li className="p__raleway">
