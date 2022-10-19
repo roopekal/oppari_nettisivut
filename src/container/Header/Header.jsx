@@ -6,7 +6,7 @@ const Header = () => (
    <div className="app__header app__wrapper section__padding" id="home">
       <div className="app__wrapper_info">
          <SubHeading title="Aitoja lapin makuja" />
-         <h1 className="app__header-h1">Kievarissa kuhisee</h1>
+         <h1 className="app__header-h1">Laanilan Kievari</h1>
          <p
             className="p__raleway"
             style={{ textAlign: "center", margin: "2rem 0" }}

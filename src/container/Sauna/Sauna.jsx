@@ -1,6 +1,5 @@
 import React from "react";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
-import { Carousel } from "react-responsive-carousel";
 import images from "../../constants/images";
 import SubHeading from "../../components/SubHeading/SubHeading";
 
@@ -9,25 +8,7 @@ import "./Sauna.css";
 const Sauna = () => (
    <div className="app__bg app__wrapper section__padding" id="sauna">
       <div className="app__wrapper_img app__wrapper_img-reverse">
-         <Carousel
-            infiniteLoop={true}
-            emulateTouch={true}
-            showThumbs={false}
-            showStatus={false}
-         >
-            <div className="app__carousel_sauna-item">
-               <img src={images.sauna_iso} alt="iso sauna" />
-            </div>
-            <div>
-               <img src={images.sauna_pieni} alt="pieni sauna" />
-            </div>
-            <div>
-               <img src={images.sauna_pier} alt="Saunalaituri" />
-            </div>
-            <div>
-               <img src={images.sauna_outside} alt="Sauna ulkopuolelta" />
-            </div>
-         </Carousel>
+         <img src={images.sauna_iso} alt="sauna" />
       </div>
       <div className="app__wrapper_info">
          <div className="app__sauna-content_upper">
