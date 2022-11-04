@@ -6,6 +6,8 @@
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
+    "dotenv": "^16.0.3",
+    "google-map-react": "^2.2.0",
     "hamburger-react": "^2.5.0",
     "react": "^18.3.0-next-338e6a967-20221004",
     "react-dom": "^18.3.0-next-338e6a967-20221004",
@@ -15,16 +17,20 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "start": "react-app-rewired start",
+    "build": "react-app-rewired build",
+    "test": "react-app-rewired test",
+    "eject": "react-app-rewired eject"
   },
   "eslintConfig": {
     "extends": [
       "react-app",
       "react-app/jest"
-    ]
+    ],
+    "env": {
+      "browser": true,
+      "node": true
+  }
   },
   "browserslist": {
     "production": [
@@ -50,5 +56,12 @@
   "bugs": {
     "url": "https://github.com/roopekal/oppari_nettisivut/issues"
   },
-  "homepage": "."
+  "homepage": ".",
+  "devDependencies": {
+    "react-app-rewired": "^2.2.1",
+    "react-error-overlay": "^6.0.9"
+  },
+  "resolutions": {
+    "react-error-overlay": "6.0.9"
+  }
 }

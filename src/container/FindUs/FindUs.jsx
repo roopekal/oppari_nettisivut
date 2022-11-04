@@ -1,7 +1,13 @@
 import React from "react";
 
+import Map from "../../components/Map/Map";
 import SubHeading from "../../components/SubHeading/SubHeading";
-import images from "../../constants/images";
+
+const location = {
+   address: "Sateenkaarenpääntie 9, 99830 Saariselkä",
+   lat: 68.402469,
+   lng: 27.392732,
+};
 
 const FindUs = () => (
    <div className="app__bg app__wrapper section__padding" id="contact">
@@ -37,9 +43,8 @@ const FindUs = () => (
             </button>
          </div>
       </div>
-      <div className="app__wrapper_img">
-         <img src={images.placeholder_image} alt="placeholder" />
-         {/*lisää tähän google maps*/}
+      <div style={{ width: "100%", height: "100%" }}>
+         <Map location={location} zoomLevel={16} />
       </div>
    </div>
 );

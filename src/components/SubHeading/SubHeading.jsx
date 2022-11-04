@@ -1,5 +1,4 @@
 import React from "react";
-import { MdPadding } from "react-icons/md";
 import images from "../../constants/images";
 const SubHeading = ({ title }) => (
    <div style={{ marginBottom: "1rem" }}>
