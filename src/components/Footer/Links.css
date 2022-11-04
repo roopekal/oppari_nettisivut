@@ -1,0 +1,19 @@
+.app__links {
+   padding: 2rem 4rem;
+   background: var(--color-prussian-blue);
+
+   width: 100%;
+   display: flex;
+   justify-content: space-between;
+   align-items: flex-start;
+   margin-top: 5rem;
+}
+.app__links-link {
+   flex: 1;
+   margin: 1rem;
+   text-align: center;
+}
+.app__links-link img{
+   height: 77px;
+   margin-bottom: 0.75rem;
+}
