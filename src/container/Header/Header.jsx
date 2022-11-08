@@ -7,10 +7,7 @@ const Header = () => (
       <div className="app__wrapper_info">
          <SubHeading title="Aitoja lapin makuja" />
          <h1 className="app__header-h1">Laanilan Kievari</h1>
-         <p
-            className="p__raleway"
-            style={{ textAlign: "center", margin: "2rem 0" }}
-         >
+         <p className="p__raleway" style={{ margin: "2rem 0" }}>
             Laanilan Kievari haluaa tarjota vierailleen elämyksiä. <br /> Meillä
             kyse ei ole vain vatsan täyttämisestä vaan kaikkien palasten
             loksahtamisesta kohdalleen. <br /> Tärkeässä roolissa on tarkasti
