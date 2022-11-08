@@ -6,7 +6,7 @@ import "./Map.css";
 
 const LocationPin = ({ text }) => (
    <div className="pin">
-      <MdLocationPin className="pin-icon" />
+      <MdLocationPin size={34} className="pin-icon" />
       <p className="pin-text">{text}</p>
    </div>
 );

@@ -2,6 +2,7 @@ import React from "react";
 
 import Map from "../../components/Map/Map";
 import SubHeading from "../../components/SubHeading/SubHeading";
+import "./FindUs.css";
 
 const location = {
    address: "Sateenkaarenpääntie 9, 99830 Saariselkä",
@@ -10,7 +11,10 @@ const location = {
 };
 
 const FindUs = () => (
-   <div className="app__bg app__wrapper section__padding" id="contact">
+   <div
+      className="app__bg app__wrapper section__padding app__contact-container"
+      id="contact"
+   >
       <div className="app__wrapper_info">
          <SubHeading title="Yhteystiedot" />
          <h1 className="headtext__poiret-one" style={{ marginBottom: "3rem" }}>
@@ -43,7 +47,7 @@ const FindUs = () => (
             </button>
          </div>
       </div>
-      <div style={{ width: "100%", height: "100%" }}>
+      <div className="app__map">
          <Map location={location} zoomLevel={16} />
       </div>
    </div>
