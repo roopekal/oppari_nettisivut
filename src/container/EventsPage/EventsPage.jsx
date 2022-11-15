@@ -1,7 +1,7 @@
 import React from "react";
-
 import "./EventsPage.css";
 import images from "../../constants/images";
+
 const EventsPage = () => (
    <div
       className="app__events app__bg flex__center section__padding"
@@ -33,6 +33,17 @@ const EventsPage = () => (
                Ota yhteyttä
             </button>
          </div>
+      </div>
+      <div className="app__facebook_container">
+         <iframe
+            title="fb-feed"
+            src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FLaanilanKievari%2F&tabs=timeline&width=340&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId"
+            className="app__facebook_iframe"
+            scrolling="no"
+            frameborder="0"
+            allowfullscreen="true"
+            allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+         ></iframe>
       </div>
    </div>
 );

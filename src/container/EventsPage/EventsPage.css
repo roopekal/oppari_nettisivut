@@ -1,4 +1,9 @@
+.app__events {
+   display: flex;
+   flex-direction: row;
+}
 .app__events-content {
+   align-self: flex-start;
    width: 100%;
    align-items: flex-end;
    justify-items: flex-end;
@@ -33,3 +38,24 @@ margin: 2rem 0;
 .app__events-content_permanent p{
    margin: 2rem 0;
    }
+.app__facebook_container {
+   display: flex;
+   flex-direction: column;
+   align-items: flex-start;
+   align-self: stretch;
+   min-height: 500px;
+}
+.app__facebook_iframe {
+   width: 340px;
+   height: 500px;
+   border: none;
+   overflow: hidden;
+}
+@media screen and (max-width: 1150px) { 
+   .app__events{
+      flex-direction: column;
+   }
+   .app__facebook_container {
+      padding-top: 2rem;
+   }
+}

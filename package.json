@@ -30,7 +30,7 @@
     "env": {
       "browser": true,
       "node": true
-  }
+    }
   },
   "browserslist": {
     "production": [
