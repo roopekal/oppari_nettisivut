@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import images from "../../constants/images";
+import test_pdf from "../../assets/test.pdf";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { MdOutlineRestaurantMenu } from "react-icons/md";
 import "./Navbar.css";
@@ -27,7 +28,9 @@ const Navbar = () => {
                <a href="#"></a>
             </li>
             <li className="p__raleway">
-               <a href="#menu">A la carte</a>
+               <a href={test_pdf} target="_blank">
+                  A la carte
+               </a>
             </li>
             <li className="p__raleway app__navbar-divider">
                <a href="#"></a>
