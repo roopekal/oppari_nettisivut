@@ -8,16 +8,18 @@ import FindUs from "./container/FindUs/FindUs";
 import Footer from "./container/Footer/Footer";
 import "./App.css";
 
-const App = () => (
-   <div>
-      <Navbar />
-      <Header />
-      <EventsPage />
-      <Sauna />
-      <Gallery />
-      <FindUs />
-      <Footer />
-   </div>
-);
+const App = () => {
+   return (
+      <div>
+         <Navbar />
+         <Header />
+         <EventsPage />
+         <Sauna />
+         <Gallery />
+         <FindUs />
+         <Footer />
+      </div>
+   );
+};
 
 export default App;
