@@ -3,8 +3,13 @@ import ReactDOM from "react-dom/client";
 import Main from "./Main";
 import reportWebVitals from "./reportWebVitals";
 import "./index.css";
-
 import { BrowserRouter } from "react-router-dom";
+import { configureStore } from "@reduxjs/toolkit";
+import { Provider } from "react-redux";
+
+const store = configureStore({
+   reducer: {},
+});
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(

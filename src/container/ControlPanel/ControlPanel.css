@@ -1,0 +1,71 @@
+.app__cpanel_container {
+   flex-direction: column;
+}
+.app__cpanel-section {
+   background-color: var(--color-indigo-blue);
+   display: flex;
+   flex-direction: column;
+   font-family: var(--font-alt);
+   width: 70%;
+   height: 300px;
+   margin-bottom: 2rem;
+   border-radius: 25px;
+   justify-content: center;
+   position: relative;
+}
+.app__cpanel-section_headtext {
+   color: var(--color-ash-gray);
+   font-weight: 700;
+   letter-spacing: 0.04em;
+   text-transform: capitalize;
+   font-feature-settings: 'tnum' on, 'lnum' on;
+   line-height: 29.9px;
+   font-size: 23px;
+   text-align: center;
+   width: 100%;
+   position: absolute;
+   top: 1rem;
+   text-shadow: 2px 1.5px var(--color-prussian-blue);
+   
+}
+.app__cpanel-section button {
+   width: 104px;
+
+}
+.app__winelist_upload {
+   display: flex;
+   margin-bottom: 1rem;
+}
+.app__winelist_select {
+   display: flex;
+}
+.app__winelist_container{
+ display: flex;
+ flex-direction: column;
+}
+.app__popup {
+   position:absolute;
+   font-family:var(--font-alt);
+   top:2rem;
+   left:45%;
+   background-color:var(--color-ash-gray);
+   color:var(--color-prussian-blue);
+   font-weight:700;
+   font-size: 18px;
+   width:200px;
+   height:50px;
+   text-align:center;
+   display: flex;
+   justify-content: center;
+   flex-direction: column;
+   border-radius: 25px;
+}
+.app__menu_container{
+
+}
+.app__events_container{
+
+}
+.app__gallery_container{
+
+}

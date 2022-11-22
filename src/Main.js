@@ -1,6 +1,5 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
-
 import ControlPanel from "./container/ControlPanel/ControlPanel.jsx";
 import App from "./App.js";
 
