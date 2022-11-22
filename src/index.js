@@ -6,9 +6,12 @@ import "./index.css";
 import { BrowserRouter } from "react-router-dom";
 import { configureStore } from "@reduxjs/toolkit";
 import { Provider } from "react-redux";
+import winelistReducer from "./features/winelist";
 
 const store = configureStore({
-   reducer: {},
+   reducer: {
+      winelist: winelistReducer,
+   },
 });
 
 const root = ReactDOM.createRoot(document.getElementById("root"));

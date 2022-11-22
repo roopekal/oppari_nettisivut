@@ -3,7 +3,8 @@ import "./ControlPanel.css";
 import { storage } from "../../firebase-config";
 import { ref, uploadBytes, listAll, getDownloadURL } from "firebase/storage";
 import { v4 } from "uuid";
-import Select from "react-select";
+import { useDispatch } from "react-redux";
+import { updateValue } from "../../features/winelist";
 
 const ControlPanel = () => {
    const [activeFolder, setActiveFolder] = useState("");
@@ -12,6 +13,8 @@ const ControlPanel = () => {
    const [wineFileList, setWineFileList] = useState([]);
    const fileWinelistRef = ref(storage, "winelist_folder/");
    const [testList, setTestList] = useState([]);
+
+   const dispatch = useDispatch();
 
    // filujen lisääminen firebaseen
    const uploadFile = () => {
@@ -53,6 +56,7 @@ const ControlPanel = () => {
 
    const handleChange = (e) => {
       setActiveWinelist(e.target.value);
+      console.log(activeWinelist);
    };
    const myAlert = (msg, duration) => {
       var alt = document.createElement("div");
@@ -100,7 +104,10 @@ const ControlPanel = () => {
                   ))}
                </select>
                <button
-                  onClick={() => myAlert("New Winelist added", 2000)}
+                  onClick={() => {
+                     dispatch(updateValue({ listLink: activeWinelist }));
+                     myAlert("New Winelist added", 2000);
+                  }}
                   type="button"
                   className="custom__button"
                   style={{ alignSelf: "center" }}

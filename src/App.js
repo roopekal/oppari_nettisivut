@@ -7,8 +7,11 @@ import Gallery from "./container/Gallery/Gallery";
 import FindUs from "./container/FindUs/FindUs";
 import Footer from "./container/Footer/Footer";
 import "./App.css";
+import { useSelector } from "react-redux";
 
 const App = () => {
+   const winelist = useSelector((state) => state.winelist.value);
+
    return (
       <div>
          <Navbar />

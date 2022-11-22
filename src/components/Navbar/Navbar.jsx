@@ -4,6 +4,7 @@ import test_pdf from "../../assets/test.pdf";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { MdOutlineRestaurantMenu } from "react-icons/md";
 import "./Navbar.css";
+import winelist from "../../features/winelist";
 
 const Navbar = () => {
    const [toggleMenu, setToggleMenu] = useState(false);
@@ -36,7 +37,7 @@ const Navbar = () => {
                <a href="#"></a>
             </li>
             <li className="p__raleway">
-               <a href="#wines">Viinit</a>
+               <a href={winelist.listLink}>Viinit</a>
             </li>
             <li className="p__raleway app__navbar-divider">
                <a href="#"></a>
