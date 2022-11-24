@@ -18,6 +18,7 @@ const Navbar = () => {
    useEffect(() => {
       getWinelistLink();
       console.log(wineList);
+      // eslint-disable-next-line react-hooks/exhaustive-deps
    }, []);
    const [toggleMenu, setToggleMenu] = useState(false);
    return (
