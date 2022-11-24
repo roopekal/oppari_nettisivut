@@ -1,24 +1,19 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import Main from "./Main";
 import reportWebVitals from "./reportWebVitals";
 import "./index.css";
-import { BrowserRouter } from "react-router-dom";
-import { configureStore } from "@reduxjs/toolkit";
-import { Provider } from "react-redux";
-import winelistReducer from "./features/winelist";
-
-const store = configureStore({
-   reducer: {
-      winelist: winelistReducer,
-   },
-});
+import ControlPanel from "./container/ControlPanel/ControlPanel.jsx";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import App from "./App.js";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-   <Provider store={store}>
-      <Main />
-   </Provider>
+   <BrowserRouter>
+      <Routes>
+         <Route exact path="/" element={<App />}></Route>
+         <Route exact path="/cpanel" element={<ControlPanel />}></Route>
+      </Routes>
+   </BrowserRouter>
 );
 
 // If you want to start measuring performance in your app, pass a function

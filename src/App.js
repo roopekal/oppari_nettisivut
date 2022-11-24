@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Navbar from "./components/Navbar/Navbar";
 import Header from "./container/Header/Header";
 import EventsPage from "./container/EventsPage/EventsPage";
@@ -7,11 +7,8 @@ import Gallery from "./container/Gallery/Gallery";
 import FindUs from "./container/FindUs/FindUs";
 import Footer from "./container/Footer/Footer";
 import "./App.css";
-import { useSelector } from "react-redux";
 
 const App = () => {
-   const winelist = useSelector((state) => state.winelist.value);
-
    return (
       <div>
          <Navbar />

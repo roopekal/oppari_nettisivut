@@ -1,12 +1,24 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import images from "../../constants/images";
 import test_pdf from "../../assets/test.pdf";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { MdOutlineRestaurantMenu } from "react-icons/md";
 import "./Navbar.css";
-import winelist from "../../features/winelist";
+import { doc, getDoc } from "firebase/firestore";
+import { db } from "../../firebase-config";
 
 const Navbar = () => {
+   const [wineList, setWineList] = useState();
+   const docRef = doc(db, "constants", "WinelistLink");
+
+   const getWinelistLink = async () => {
+      const docSnap = await getDoc(docRef);
+      setWineList(docSnap.get("file_link"));
+   };
+   useEffect(() => {
+      getWinelistLink();
+      console.log(wineList);
+   }, []);
    const [toggleMenu, setToggleMenu] = useState(false);
    return (
       <nav className="app__navbar">
@@ -37,7 +49,9 @@ const Navbar = () => {
                <a href="#"></a>
             </li>
             <li className="p__raleway">
-               <a href={winelist.listLink}>Viinit</a>
+               <a href={wineList} target="_blank">
+                  Viinit
+               </a>
             </li>
             <li className="p__raleway app__navbar-divider">
                <a href="#"></a>

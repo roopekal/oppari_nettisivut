@@ -2,9 +2,9 @@ import React, { useEffect, useState } from "react";
 import "./ControlPanel.css";
 import { storage } from "../../firebase-config";
 import { ref, uploadBytes, listAll, getDownloadURL } from "firebase/storage";
+import { doc, setDoc } from "firebase/firestore";
 import { v4 } from "uuid";
-import { useDispatch } from "react-redux";
-import { updateValue } from "../../features/winelist";
+import { db } from "../../firebase-config";
 
 const ControlPanel = () => {
    const [activeFolder, setActiveFolder] = useState("");
@@ -12,9 +12,12 @@ const ControlPanel = () => {
    const [activeWinelist, setActiveWinelist] = useState();
    const [wineFileList, setWineFileList] = useState([]);
    const fileWinelistRef = ref(storage, "winelist_folder/");
-   const [testList, setTestList] = useState([]);
 
-   const dispatch = useDispatch();
+   async function putData(data) {
+      await setDoc(doc(db, "constants", "WinelistLink"), {
+         file_link: activeWinelist,
+      });
+   }
 
    // filujen lisääminen firebaseen
    const uploadFile = () => {
@@ -34,6 +37,7 @@ const ControlPanel = () => {
 
    //kerää viinilistojen URL linkit firebasesta
    useEffect(() => {
+      setWineFileList([]);
       listAll(fileWinelistRef).then((response) => {
          response.items.forEach((item) => {
             getDownloadURL(item).then((url) =>
@@ -42,7 +46,7 @@ const ControlPanel = () => {
          });
       });
    }, []);
-
+   /*
    useEffect(() => {
       listAll(fileWinelistRef).then((response) => {
          setTestList(
@@ -53,7 +57,7 @@ const ControlPanel = () => {
          );
       });
    }, []);
-
+*/
    const handleChange = (e) => {
       setActiveWinelist(e.target.value);
       console.log(activeWinelist);
@@ -105,8 +109,9 @@ const ControlPanel = () => {
                </select>
                <button
                   onClick={() => {
-                     dispatch(updateValue({ listLink: activeWinelist }));
+                     // tähän post firebase
                      myAlert("New Winelist added", 2000);
+                     putData(activeWinelist);
                   }}
                   type="button"
                   className="custom__button"
