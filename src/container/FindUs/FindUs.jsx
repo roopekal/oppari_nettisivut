@@ -1,14 +1,7 @@
 import React from "react";
 
-import Map from "../../components/Map/Map";
 import SubHeading from "../../components/SubHeading/SubHeading";
 import "./FindUs.css";
-
-const location = {
-   address: "Sateenkaarenpääntie 9, 99830 Saariselkä",
-   lat: 68.402469,
-   lng: 27.392732,
-};
 
 const FindUs = () => (
    <div
@@ -47,8 +40,16 @@ const FindUs = () => (
             </button>
          </div>
       </div>
-      <div className="app__map">
-         <Map location={location} zoomLevel={16} />
+      <div>
+         <iframe
+            title="google maps"
+            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d5874.185054693408!2d27.398258!3d68.403148!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x45cd4339076c9c0d%3A0x7d965c2fc2a1906e!2sLaanilan%20Kievari!5e0!3m2!1sen!2sus!4v1669377169732!5m2!1sen!2sus"
+            width="600"
+            height="450"
+            allowfullscreen="true"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+         ></iframe>
       </div>
    </div>
 );
