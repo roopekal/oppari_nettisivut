@@ -3,16 +3,19 @@
    flex-direction: row;
    justify-content: space-between;
 }
-.app__map {
+.app__google-maps {
    align-self: flex-end;
-   width: 50%;
+   width: 700px;
+   height: 700px;
 }
 @media screen and (max-width: 1150px) {
    .app__contact-container{
       flex-direction: column;
    }
-   .app__map {
+   .app__google-maps {
       padding-top: 2rem;
       width: 100%;
+      height: 450px;
+      border: none;
    }
 }

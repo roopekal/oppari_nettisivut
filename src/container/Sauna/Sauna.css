@@ -46,4 +46,8 @@
    .carousel .thumb img {
       width: 100%;
       }
+.carousel {
+   max-width: 636px;
+}
+
  
