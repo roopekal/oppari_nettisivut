@@ -33,12 +33,6 @@ const Gallery = () => {
          <div className="app__gallery-content">
             <SubHeading title="Instagram" />
             <h1 className="headtext__poiret-one">Galleria</h1>
-            <p
-               className="p__raleway"
-               style={{ color: "#AAA", marginTop: "2rem" }}
-            >
-               asdasdasda
-            </p>
             <button type="button" className="custom__button">
                View more
             </button>

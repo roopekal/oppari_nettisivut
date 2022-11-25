@@ -36,7 +36,7 @@ const Navbar = () => {
                <a href="#"></a>
             </li>
             <li className="p__raleway">
-               <a href="#events">Tapahtumat</a>
+               <a href="#events">Ajankohtaista</a>
             </li>
             <li className="p__raleway app__navbar-divider">
                <a href="#"></a>

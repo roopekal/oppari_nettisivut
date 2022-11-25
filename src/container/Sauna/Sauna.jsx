@@ -2,13 +2,55 @@ import React from "react";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import images from "../../constants/images";
 import SubHeading from "../../components/SubHeading/SubHeading";
+import { Carousel } from "react-responsive-carousel";
 
 import "./Sauna.css";
+
+const settingsSmall = {
+   autoPlay: true,
+   swipeable: true,
+   infiniteLoop: true,
+   emulateTouch: true,
+   showArrows: false,
+   showThumbs: false,
+};
+
+const settingsLarge = {
+   autoPlay: true,
+   swipeable: true,
+   infiniteLoop: true,
+   emulateTouch: true,
+   showArrows: false,
+   thumbWidth: 60,
+};
 
 const Sauna = () => (
    <div className="app__bg app__wrapper section__padding" id="sauna">
       <div className="app__wrapper_img app__wrapper_img-reverse">
-         <img src={images.sauna_iso} alt="sauna" />
+         <Carousel
+            {...(window.innerWidth < 960 ? settingsSmall : settingsLarge)}
+         >
+            <div>
+               <img src={images.sauna_iso} alt="sauna_iso" />
+               <p className="legend">Kuva ison saunan sisältä</p>
+            </div>
+            <div>
+               <img src={images.sauna_outside} alt="sauna_outside" />
+               <p className="legend">Kuva saunan ulkopuolelta</p>
+            </div>
+            <div>
+               <img src={images.sauna_pieni} alt="sauna_small" />
+               <p className="legend">Pienempi sauna</p>
+            </div>
+            <div>
+               <img src={images.sauna_pier} alt="sauna_pier" />
+               <p className="legend">Saunan laituri</p>
+            </div>
+            <div>
+               <img src={images.sauna_avanto} alt="sauna_avanto" />
+               <p className="legend">Avanto</p>
+            </div>
+         </Carousel>
       </div>
       <div className="app__wrapper_info">
          <div className="app__sauna-content_upper">

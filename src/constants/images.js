@@ -13,6 +13,7 @@ import lapin_panimo from "../assets/LapinPanimo.png";
 import trip_advisor from "../assets/tripadvisor.jpg";
 import we_speak_gay from "../assets/we_speak_gay.jpg";
 import winestate from "../assets/winestatelogo.png";
+import sauna_avanto from "../assets/sauna_avanto.jpg";
 export default {
    logo,
    placeholder_image,
@@ -23,6 +24,7 @@ export default {
    sauna_pieni,
    sauna_pier,
    sauna_outside,
+   sauna_avanto,
    oiva,
    culinari,
    lapin_panimo,
