@@ -9,7 +9,6 @@ import Footer from "./container/Footer/Footer";
 import "./App.css";
 
 const App = () => {
-   console.log(process.env);
    return (
       <div>
          <Navbar />
