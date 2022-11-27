@@ -11,7 +11,7 @@ root.render(
    <BrowserRouter>
       <Routes>
          <Route exact path="/" element={<App />}></Route>
-         <Route exact path="/cpanel" element={<ControlPanel />}></Route>
+         <Route exact path="/admin" element={<ControlPanel />}></Route>
       </Routes>
    </BrowserRouter>
 );
