@@ -18,6 +18,9 @@ const firebaseConfig = {
    measurementId: process.env.REACT_APP_FIREBASE_MEASUREMENT_ID,
 };
 
-const app = initializeApp(firebaseConfig);
+const app = initializeApp(firebaseConfig, {
+   experimentalForceLongPolling: true,
+   useFetchStreams: false,
+});
 export const storage = getStorage(app);
 export const db = getFirestore(app);
