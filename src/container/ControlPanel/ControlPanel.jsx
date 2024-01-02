@@ -5,6 +5,7 @@ import { ref, uploadBytes, listAll, getDownloadURL } from "firebase/storage";
 import { doc, setDoc } from "firebase/firestore";
 import { v4 } from "uuid";
 import { db } from "../../firebase-config";
+import Menu from "../Menu/Menu";
 
 const ControlPanel = () => {
    const [activeFolder, setActiveFolder] = useState("");
@@ -19,7 +20,6 @@ const ControlPanel = () => {
       });
    }
 
-   // filujen lisääminen firebaseen
    const uploadFile = () => {
       if (fileUpload == null) return;
       const fileRef = ref(
@@ -31,11 +31,6 @@ const ControlPanel = () => {
       });
    };
 
-   //label = response.items[0]._location.path_.slice(16).split(".")[0]
-   //value = linkki
-   //filun nimi ==== wineFileList.map((item) => item.slice(104).split(".")[0])
-
-   //kerää viinilistojen URL linkit firebasesta
    useEffect(() => {
       setWineFileList([]);
       listAll(fileWinelistRef).then((response) => {
@@ -47,18 +42,7 @@ const ControlPanel = () => {
       });
       // eslint-disable-next-line react-hooks/exhaustive-deps
    }, []);
-   /*
-   useEffect(() => {
-      listAll(fileWinelistRef).then((response) => {
-         setTestList(
-            response.items.map(
-               (label) =>
-                  (label = label._location.path_.slice(16).split(".")[0])
-            )
-         );
-      });
-   }, []);
-*/
+
    const handleChange = (e) => {
       setActiveWinelist(e.target.value);
       console.log(activeWinelist);
@@ -110,7 +94,6 @@ const ControlPanel = () => {
                </select>
                <button
                   onClick={() => {
-                     // tähän post firebase
                      myAlert("New Winelist added", 2000);
                      putData(activeWinelist);
                   }}
@@ -124,6 +107,7 @@ const ControlPanel = () => {
          </div>
          <div className="app__menu_container app__cpanel-section">
             <p className="app__cpanel-section_headtext">Menu</p>
+            <Menu />
          </div>
          <div className="app__events_container app__cpanel-section">
             <p className="app__cpanel-section_headtext">Events</p>

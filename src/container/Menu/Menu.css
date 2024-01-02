@@ -1,0 +1,8 @@
+.app__menu-container {
+   display: flex;
+   flex-direction: row;
+}
+.app__menu-column {
+   display: flex;
+   flex-direction: column;
+}
