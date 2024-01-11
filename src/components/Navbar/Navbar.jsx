@@ -9,14 +9,22 @@ import { db } from "../../firebase-config";
 
 const Navbar = () => {
    const [wineList, setWineList] = useState();
-   const docRef = doc(db, "constants", "WinelistLink");
+   const docRefWine = doc(db, "constants", "WinelistLink");
+
+   const [menuList, setMenuList] = useState();
+   const docRefMenu = doc(db, "constants", "MenuLink");
 
    const getWinelistLink = async () => {
-      const docSnap = await getDoc(docRef);
+      const docSnap = await getDoc(docRefWine);
       setWineList(docSnap.get("file_link"));
+   };
+   const getMenuLink = async () => {
+      const docSnap = await getDoc(docRefMenu);
+      setMenuList(docSnap.get("file_link"));
    };
    useEffect(() => {
       getWinelistLink();
+      getMenuLink();
       //console.log(wineList);
       // eslint-disable-next-line react-hooks/exhaustive-deps
    }, []);
@@ -42,7 +50,7 @@ const Navbar = () => {
                <a href="#"></a>
             </li>
             <li className="p__raleway">
-               <a href={test_pdf} target="_blank">
+               <a href={menuList} target="_blank">
                   A la carte
                </a>
             </li>
