@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import images from "../../constants/images";
-import test_pdf from "../../assets/test.pdf";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { MdOutlineRestaurantMenu } from "react-icons/md";
 import "./Navbar.css";
@@ -25,7 +24,7 @@ const Navbar = () => {
    useEffect(() => {
       getWinelistLink();
       getMenuLink();
-      console.log(menuList);
+      //console.log(menuList);
       // eslint-disable-next-line react-hooks/exhaustive-deps
    }, []);
    const [toggleMenu, setToggleMenu] = useState(false);
