@@ -11,8 +11,11 @@ const ControlPanel = () => {
    const [activeFolder, setActiveFolder] = useState("");
    const [fileUpload, setFileUpload] = useState(null);
    const [activeWinelist, setActiveWinelist] = useState();
+   const [activeMenu, setActiveMenu] = useState();
    const [wineFileList, setWineFileList] = useState([]);
+   const [menuFileList, setMenuFileList] = useState([]);
    const fileWinelistRef = ref(storage, "winelist_folder/");
+   const fileMenuRef = ref(storage, "menu_folder/");
 
    async function putData(data) {
       await setDoc(doc(db, "constants", "WinelistLink"), {
@@ -43,9 +46,25 @@ const ControlPanel = () => {
       // eslint-disable-next-line react-hooks/exhaustive-deps
    }, []);
 
-   const handleChange = (e) => {
+   useEffect(() => {
+      setMenuFileList([]);
+      listAll(fileMenuRef).then((response) => {
+         response.items.forEach((item) => {
+            getDownloadURL(item).then((url) =>
+               setMenuFileList((prev) => [...prev, url])
+            );
+         });
+      });
+      // eslint-disable-next-line react-hooks/exhaustive-deps
+   }, []);
+
+   const handleWinelistChange = (e) => {
       setActiveWinelist(e.target.value);
       console.log(activeWinelist);
+   };
+   const handleMenuChange = (e) => {
+      setActiveMenu(e.target.value);
+      console.log(activeMenu);
    };
    const myAlert = (msg, duration) => {
       var alt = document.createElement("div");
@@ -82,7 +101,7 @@ const ControlPanel = () => {
             <p className="p__raleway">Select active winelist</p>
             <div className="app__winelist_select">
                <select
-                  onChange={handleChange}
+                  onChange={handleWinelistChange}
                   name="winelists"
                   id="winelist-select"
                >
@@ -107,7 +126,49 @@ const ControlPanel = () => {
          </div>
          <div className="app__menu_container app__cpanel-section">
             <p className="app__cpanel-section_headtext">Menu</p>
-            <Menu />
+            <p className="p__raleway">Upload a new winelist</p>
+            <div className="app__winelist_upload">
+               <input
+                  type="file"
+                  onClick={() => setActiveFolder("winelist")}
+                  onChange={(event) => {
+                     setFileUpload(event.target.files[0]);
+                  }}
+               />
+               <button
+                  onClick={uploadFile}
+                  type="button"
+                  className="custom__button"
+                  style={{ alignSelf: "center" }}
+               >
+                  Upload
+               </button>
+            </div>
+            <p className="p__raleway">Select active winelist</p>
+            <div className="app__winelist_select">
+               <select
+                  onChange={handleWinelistChange}
+                  name="winelists"
+                  id="winelist-select"
+               >
+                  {wineFileList.map((option, index) => (
+                     <option key={index} value={option}>
+                        {option.slice(104).split(".")[0]}
+                     </option>
+                  ))}
+               </select>
+               <button
+                  onClick={() => {
+                     myAlert("New Winelist added", 2000);
+                     putData(activeWinelist);
+                  }}
+                  type="button"
+                  className="custom__button"
+                  style={{ alignSelf: "center" }}
+               >
+                  Select
+               </button>
+            </div>
          </div>
          <div className="app__events_container app__cpanel-section">
             <p className="app__cpanel-section_headtext">Events</p>
