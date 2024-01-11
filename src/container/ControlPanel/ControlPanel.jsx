@@ -126,11 +126,11 @@ const ControlPanel = () => {
          </div>
          <div className="app__menu_container app__cpanel-section">
             <p className="app__cpanel-section_headtext">Menu</p>
-            <p className="p__raleway">Upload a new winelist</p>
+            <p className="p__raleway">Upload a new menu</p>
             <div className="app__winelist_upload">
                <input
                   type="file"
-                  onClick={() => setActiveFolder("winelist")}
+                  onClick={() => setActiveFolder("menu")}
                   onChange={(event) => {
                      setFileUpload(event.target.files[0]);
                   }}
@@ -144,14 +144,14 @@ const ControlPanel = () => {
                   Upload
                </button>
             </div>
-            <p className="p__raleway">Select active winelist</p>
+            <p className="p__raleway">Select active menu</p>
             <div className="app__winelist_select">
                <select
-                  onChange={handleWinelistChange}
+                  onChange={handleMenuChange}
                   name="winelists"
                   id="winelist-select"
                >
-                  {wineFileList.map((option, index) => (
+                  {menuFileList.map((option, index) => (
                      <option key={index} value={option}>
                         {option.slice(104).split(".")[0]}
                      </option>
@@ -159,8 +159,8 @@ const ControlPanel = () => {
                </select>
                <button
                   onClick={() => {
-                     myAlert("New Winelist added", 2000);
-                     putData(activeWinelist);
+                     myAlert("New Menu added", 2000);
+                     putData(activeMenu);
                   }}
                   type="button"
                   className="custom__button"
