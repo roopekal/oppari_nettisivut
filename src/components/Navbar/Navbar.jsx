@@ -50,7 +50,7 @@ const Navbar = () => {
                <a href="#"></a>
             </li>
             <li className="p__raleway">
-               <a href={menuList} target="_blank">
+               <a href={menuList} rel="noreferrer" target="_blank">
                   A la carte
                </a>
             </li>
