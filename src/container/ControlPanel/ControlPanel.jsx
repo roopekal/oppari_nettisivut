@@ -5,7 +5,6 @@ import { ref, uploadBytes, listAll, getDownloadURL } from "firebase/storage";
 import { doc, setDoc } from "firebase/firestore";
 import { v4 } from "uuid";
 import { db } from "../../firebase-config";
-import Menu from "../Menu/Menu";
 
 const ControlPanel = () => {
    const [activeFolder, setActiveFolder] = useState("");
@@ -17,9 +16,14 @@ const ControlPanel = () => {
    const fileWinelistRef = ref(storage, "winelist_folder/");
    const fileMenuRef = ref(storage, "menu_folder/");
 
-   async function putData(data) {
+   async function putWineData(data) {
       await setDoc(doc(db, "constants", "WinelistLink"), {
          file_link: activeWinelist,
+      });
+   }
+   async function putMenuData(data) {
+      await setDoc(doc(db, "constants", "MenuLink"), {
+         file_link: activeMenu,
       });
    }
 
@@ -114,7 +118,7 @@ const ControlPanel = () => {
                <button
                   onClick={() => {
                      myAlert("New Winelist added", 2000);
-                     putData(activeWinelist);
+                     putWineData(activeWinelist);
                   }}
                   type="button"
                   className="custom__button"
@@ -160,7 +164,7 @@ const ControlPanel = () => {
                <button
                   onClick={() => {
                      myAlert("New Menu added", 2000);
-                     putData(activeMenu);
+                     putMenuData(activeMenu);
                   }}
                   type="button"
                   className="custom__button"
